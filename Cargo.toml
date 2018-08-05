@@ -1,0 +1,12 @@
+[package]
+name = "rust-vm"
+version = "0.1.0"
+authors = ["Andy Fang <andy.fang@airbnb.com>"]
+build = "build.rs"
+
+[dependencies]
+bytes = "0.4"
+protobuf = { version = "~2.0", features = ["with-bytes"] }
+
+[build-dependencies]
+protoc-rust = "2.0"

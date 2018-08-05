@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+enum InstructionCode {
+  MOV = 0;
+  MOVI = 1;
+  ADD = 2;
+  ADDI = 3;
+//  SUB = 4;
+//  SUBI = 5;
+//  MUL = 6;
+//  MULI = 7;
+//  DIV = 8;
+//  DIVI = 9;
+//  OR = 10;
+//  ORI = 11;
+//  AND = 12;
+//  ANDI = 13;
+//  LSH = 14;
+//  LSHI = 15;
+//  RSH = 16;
+//  RSHI = 17;
+//  NEG = 18;
+//  MOD = 19;
+//  MODI = 20;
+//  XOR = 21;
+//  XORI = 22;
+//  ARSH = 23;
+//  ARSHI = 24;
+
+  JA = 25;
+  JEQ = 26;
+  JEQI = 27;
+//  JGT = 28;
+//  JGTI =
+
+
+  HALT = 99;
+  INT = 100;
+}
+
+enum InterruptCode {
+  PRINT_REG0 = 0;
+}
+
+enum RegisterSet {
+  PC = 0;
+  R0 = 1;
+  R1 = 2;
+  R2 = 3;
+  R3 = 4;
+  R4 = 5;
+  R5 = 6;
+  FP = 7;
+  SP = 8;
+}
+
+message Instruction {
+  InstructionCode code = 1;
+  int64 imm = 2;
+  RegisterSet reg1 = 3;
+  RegisterSet reg2 = 4;
+  int64 offset = 5;
+}
+
+message Program {
+
+}
